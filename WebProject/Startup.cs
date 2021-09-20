@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebProject.Data;
+using WebProject.Services;
 
 namespace WebProject
 {
@@ -28,6 +29,7 @@ namespace WebProject
             services.AddControllersWithViews();
             services.AddDbContext<Context>(op => op.UseMySql(Configuration.GetConnectionString("Connection"), new MySqlServerVersion(new Version(15,0,0))).EnableSensitiveDataLogging().EnableDetailedErrors());
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
