@@ -7,6 +7,6 @@ namespace WebProject.Models.Enum
 {
     public enum SaleStatus : int
     {
-        pending, billed, canceled
+        Pending, Billed, Canceled
     }
 }
