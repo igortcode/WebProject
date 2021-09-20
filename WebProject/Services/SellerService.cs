@@ -20,5 +20,11 @@ namespace WebProject.Services
         {
             return _context.Sellers.ToList();
         }
+
+        public void Insert(Seller seller)
+        {
+            _context.Sellers.Add(seller);
+            _context.SaveChanges();
+        }
     }
 }

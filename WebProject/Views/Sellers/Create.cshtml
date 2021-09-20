@@ -1,0 +1,37 @@
+﻿@model WebProject.Models.Seller
+@{ 
+    ViewData["Title"] = "Create";
+}
+
+<h6>
+    @ViewData["Title"]
+</h6>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="form-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BaseSalary" class="form-label"></label>
+                <input asp-for="BaseSalary" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-primary btn-sm" />
+                <a asp-action="Index" class="btn btn-outline-info btn-sm">Back to Seller</a>
+            </div>
+        </form>
+    </div>
+
+</div>
