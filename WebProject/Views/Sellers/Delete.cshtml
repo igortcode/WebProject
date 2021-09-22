@@ -1,0 +1,47 @@
+﻿@model WebProject.Models.Seller
+
+@{ 
+    ViewData["Title"] = "Delete";
+}
+
+<h4>@ViewData["Title"]</h4>
+
+<h3>Are you sure you want to delete this?</h3>
+<hr />
+<div class="row">
+    <div>
+        <h3>Seller</h3>
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BirthDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BaseSalary)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BaseSalary)
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input class="btn btn-outline-danger btn-sm" type="submit" value="Delete" />
+            <a asp-action="Index" class="btn btn-outline-dark btn-sm">Back to List</a>
+        </form>
+    </div>
+    
+</div>
