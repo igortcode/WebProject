@@ -30,6 +30,7 @@ namespace WebProject
             services.AddDbContext<Context>(op => op.UseMySql(Configuration.GetConnectionString("Connection"), new MySqlServerVersion(new Version(15,0,0))).EnableSensitiveDataLogging().EnableDetailedErrors());
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

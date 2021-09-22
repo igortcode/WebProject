@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebProject.Models;
 using WebProject.Services;
+using WebProject.Models.ViewModels;
 
 namespace WebProject.Controllers
 {
@@ -12,9 +13,11 @@ namespace WebProject.Controllers
     {
 
         private readonly SellerService _sellerService;
-        public SellersController(SellerService sellerService)
+        private readonly DepartmentService _departmentService;
+        public SellersController(SellerService sellerService, DepartmentService departmentService)
         {
             _sellerService = sellerService;
+            _departmentService = departmentService;
         }
         public IActionResult Index()
         {
@@ -22,7 +25,7 @@ namespace WebProject.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            return View(new SellerFormViewModel { Departments = _departmentService.FindAll()});
         }
         
         [HttpPost]
