@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace WebProject.Services
 
         public Seller FindById(int id)
         {
-            return _context.Sellers.FirstOrDefault(s => s.Id == id);
+            return _context.Sellers.Include(obj => obj.Department).FirstOrDefault(s => s.Id == id);
         }
 
         public void Remove(int id)
